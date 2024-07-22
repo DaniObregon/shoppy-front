@@ -13,7 +13,6 @@ import {
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
   useColorMode,
 } from "@chakra-ui/react";
@@ -25,15 +24,14 @@ import {
   MoonIcon,
   SunIcon,
 } from "@chakra-ui/icons";
-
 import { Image } from "@chakra-ui/react";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
-  const { colorMode, toggleColorMode } = useColorMode(); // Agregamos el hook useColorMode
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Box marginTop="4">
+    <Box marginBottom={1} marginTop={2.5}>
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
@@ -41,10 +39,12 @@ export default function Navbar() {
         py={{ base: 2 }}
         px={{ base: 4 }}
         borderBottom={1}
+        borderTop={1} // Asegúrate de que este borde sea el correcto
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
         justify={"space-between"}
+        marginTop={0} // Ajusta esto si es necesario
       >
         <Flex
           flex={{ base: 1, md: "auto" }}
@@ -61,14 +61,6 @@ export default function Navbar() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          {/* <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-          >
-            Logo
-          </Text> */}
-
           <Image
             src="/frontend/src/assets/logo03.png"
             alt="Logo"
@@ -114,7 +106,6 @@ export default function Navbar() {
           >
             Sign Up
           </Button>
-          {/* Agregamos el botón de cambio de modo oscuro */}
           <IconButton
             aria-label="Toggle Dark Mode"
             icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}

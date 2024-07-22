@@ -4,19 +4,16 @@ import { Box, Flex, Image, Text } from "@chakra-ui/react";
 export const Carousel = () => {
   const slides = [
     {
-      img: "https://images.pexels.com/photos/2599537/pexels-photo-2599537.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      img: "https://images.pexels.com/photos/6830805/pexels-photo-6830805.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      img: "https://images.pexels.com/photos/2714581/pexels-photo-2714581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      img: "https://images.pexels.com/photos/9863552/pexels-photo-9863552.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      img: "https://images.pexels.com/photos/2878019/pexels-photo-2878019.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+      img: "https://images.pexels.com/photos/3065209/pexels-photo-3065209.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      img: "https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    },
-    {
-      img: "https://images.pexels.com/photos/3124111/pexels-photo-3124111.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      img: "https://images.pexels.com/photos/7990099/pexels-photo-7990099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -56,7 +53,7 @@ export const Carousel = () => {
       justifyContent="center"
     >
       <Flex w="full" overflow="hidden">
-        <Flex pos="relative" h="400px" w="full" {...carouselStyle}>
+        <Flex pos="relative" h="500px" w="full" {...carouselStyle}>
           {slides.map((slide, sid) => (
             <Box key={`slide-${sid}`} flex="none" boxSize="full" shadow="md">
               <Text
@@ -73,7 +70,7 @@ export const Carousel = () => {
                 src={slide.img}
                 alt="carousel image"
                 boxSize="full"
-                backgroundSize="cover"
+                objectFit="cover" // Ajusta la imagen para cubrir el contenedor manteniendo su relación de aspecto
               />
             </Box>
           ))}
