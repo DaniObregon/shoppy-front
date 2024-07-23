@@ -62,7 +62,7 @@ export default function Navbar() {
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Image
-            src="/frontend/src/assets/logo03.png"
+            src="/client/src/assets/logo03.png"
             alt="Logo"
             boxSize="50px"
             marginLeft={3}
